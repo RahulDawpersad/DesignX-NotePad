@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Simple Note App</title>
   <script src="https://kit.fontawesome.com/655b3b7e45.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="public/css/style.css">
@@ -11,11 +11,13 @@
   <div class="note-container">
     <div class="sidebar">
       <div class="button-container">
-        <button id="save-button">Save Note</button>
-        <button id="new-note-button">New Note</button>
+        <button id="save-button" title="Save">Save Note</button>
+        <button id="new-note-button" title="New Note"><i class="fa-solid fa-plus"></i></button>
       </div>
-      <h2>Saved Notes</h2>
-      <div id="notes-list"></div>
+      <div class="siderbar-wrapper">
+        <h2>Saved Notes</h2>
+      <div id="notes-list" class="notes-list"></div>
+      </div>
     </div>
     <div class="paper">
       <div class="paper-content">

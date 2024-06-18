@@ -45,6 +45,7 @@ function displayNotes() {
       const copyButton = document.createElement('button');
       copyButton.classList.add('copy-button');
       copyButton.innerHTML = `<i class="fa-solid fa-copy"></i>`;
+      copyButton.title = 'Copy Note';
       copyButton.addEventListener('click', (event) => {
         event.stopPropagation();
         navigator.clipboard.writeText(note)
@@ -59,6 +60,7 @@ function displayNotes() {
       const deleteButton = document.createElement('button');
       deleteButton.classList.add('delete-button');
       deleteButton.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+      deleteButton.title = 'Delete Note';
       deleteButton.addEventListener('click', (event) => {
         event.stopPropagation();
         notes.splice(index, 1);
