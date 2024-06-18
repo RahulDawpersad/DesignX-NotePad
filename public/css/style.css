@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
+    margin: 40px 0 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 2em;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.sidebar .sidebar-content{
+    margin: 1em 0;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+#notes-list {
+    max-height: 600px;
+    overflow-y: auto;
+    margin-top: 1rem;
+}
+
+.note-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.note-item h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    flex-grow: 1;
+}
+
+.button-container {
+    display: flex;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+#save-button, #new-note-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#save-button:hover, #new-note-button:hover {
+    background-color: #0056b3;
+}
+
+.paper {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    min-width: 400px;
+    height: 480px;
+    background: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+    overflow: hidden;
+}
+
+.paper:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    background: radial-gradient(#575450 6px, transparent 7px) repeat-y;
+    background-size: 30px 30px;
+    border-right: 3px solid #D44147;
+    box-sizing: border-box;
+}
+
+.paper-content {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    bottom: 30px;
+    left: 60px;
+    background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
+    background-size: 30px 30px;
+}
+
+.paper-content textarea {
+    resize: none;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    line-height: 30px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    /* font-family: 'Handlee', cursive; */
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 0.9em;
+    box-sizing: border-box;
+    z-index: 1;
+    overflow: auto; /* Ensure scrollbar appears */
+}
+
+/* Scrollbar styles for WebKit browsers (Chrome, Safari) */
+.paper-content textarea::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.paper-content textarea::-webkit-scrollbar-track {
+    background: #f4f4f4; /* Background of the scrollbar track */
+    border-radius: 10px;
+}
+
+.paper-content textarea::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    border: 2px solid #f4f4f4; /* Padding around thumb */
+}
+
+.paper-content textarea::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color when hovering over scrollbar thumb */
+}
+
+/* Scrollbar styles for Firefox */
+.paper-content textarea {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f4f4f4;
+}
+
+.paper-content textarea::-webkit-scrollbar-corner {
+    background: transparent; /* Background of the scrollbar corner */
+}
+
+.copy-button, .delete-button {
+    padding: 0.2rem 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.copy-button {
+    background-color: #4caf50;
+    color: white;
+    margin-right: 0.5rem;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.copy-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeInOut 2s forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .note-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1em;
+    }
+
+    .paper {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .button-container {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    #save-button, #new-note-button {
+        width: 100%;
+    }
+}
